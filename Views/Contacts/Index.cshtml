@@ -1,0 +1,44 @@
+﻿@model PaginatedList<Contact>
+@{
+    ViewData["Title"] = "Contacts";
+
+}
+
+    <script>
+        var currentUserId = '@User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier)';
+    </script>
+
+
+<!-- HTML Structure -->
+<div class="container mt-4">
+    <!-- Toast Container -->
+    <div class="toast-container position-fixed top-0 end-0 p-3" style="z-index: 9999"></div>
+
+    <!-- Search and Add New Section -->
+    @await Html.PartialAsync("_ContactActionsPartial")
+
+    <!-- Contacts Table -->
+    <div class="card shadow-lg border-0">
+        <div class="card-body p-0">
+            @await Html.PartialAsync("_ContactsTablePartial", Model)
+
+            <!-- Pagination -->
+            @await Html.PartialAsync("_PaginationPartial", Model)
+        </div>
+    </div>
+</div>
+
+<!-- Modals -->
+@await Html.PartialAsync("_AddContactModalPartial")
+@await Html.PartialAsync("_DeletePartial")
+
+<!-- Styles -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+<link href="~/css/contacts.css" rel="stylesheet" />
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    @* <script src="~/js/contact.js"></script> *@
+    <script type="module" src="js/main.js"></script>
+
+}

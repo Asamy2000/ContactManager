@@ -1,0 +1,42 @@
+﻿<div class="modal fade" id="addContactModal" tabindex="-1" aria-labelledby="addContactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-gradient-primary text-white">
+                <h5 class="modal-title" id="addContactModalLabel">
+                    <i class="fas fa-user-plus me-2"></i>New Contact
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="addContactForm" novalidate>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="Name" required>
+                        <div class="invalid-feedback">Please enter a valid name</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Phone Number <span class="text-danger">*</span></label>
+                        <input type="tel" class="form-control phone-input" name="Phone" required>
+                        <div class="invalid-feedback">Please enter a valid phone number</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Address <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" name="Address" required>
+                        <div class="invalid-feedback">Please enter a valid address</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Notes</label>
+                        <textarea class="form-control" name="Notes" rows="3" maxlength="500"></textarea>
+                        <div class="form-text text-muted">Maximum 500 characters</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary btn-gradient">
+                        <i class="fas fa-save me-2"></i>Save Contact
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
